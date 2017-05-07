@@ -132,7 +132,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addTire() {
-        tire = Tire(texture: nil,color: SKColor.black, size: CGSize(width: 6, height: 15))
+        tire = Tire(texture: nil,color: SKColor.black, size: CGSize(width: 10, height: 20))
         tire!.position.x = size.width / 2
         tire!.position.y = size.height / 2
         tire!.initDirections(lateralDirection: CGVector(dx:1,dy:0), fowardDirection: CGVector(dx:0, dy:1))

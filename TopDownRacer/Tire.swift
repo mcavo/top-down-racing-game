@@ -30,7 +30,6 @@ class Tire : SKSpriteNode {
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
-        self.color = SKColor.darkGray
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 10, height: 20))
         self.physicsBody?.mass = 20
         self.physicsBody?.isDynamic = true
