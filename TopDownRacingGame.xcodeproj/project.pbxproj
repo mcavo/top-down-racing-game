@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38537F3C1EB14F9200483E1A /* CustomCGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38537F3B1EB14F9200483E1A /* CustomCGVector.swift */; };
+		385837B11EBBA319003C0859 /* DirectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385837B01EBBA319003C0859 /* DirectionButton.swift */; };
+		385837B71EBBEA5C003C0859 /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 385837B61EBBEA5C003C0859 /* MyScene.sks */; };
+		385E4F5E1E8DAF58004F5EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E4F5D1E8DAF58004F5EEF /* AppDelegate.swift */; };
+		385E4F621E8DAF58004F5EEF /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 385E4F611E8DAF58004F5EEF /* Actions.sks */; };
+		385E4F661E8DAF58004F5EEF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E4F651E8DAF58004F5EEF /* GameViewController.swift */; };
+		385E4F691E8DAF59004F5EEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385E4F671E8DAF59004F5EEF /* Main.storyboard */; };
+		385E4F6B1E8DAF59004F5EEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385E4F6A1E8DAF59004F5EEF /* Assets.xcassets */; };
+		385E4F6E1E8DAF59004F5EEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385E4F6C1E8DAF59004F5EEF /* LaunchScreen.storyboard */; };
+		385E4F761E8DBBE4004F5EEF /* Tire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E4F751E8DBBE4004F5EEF /* Tire.swift */; };
+		38CFB4891EBF725C00C44606 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CFB4881EBF725C00C44606 /* GameScene.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		38537F3B1EB14F9200483E1A /* CustomCGVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCGVector.swift; sourceTree = "<group>"; };
+		385837B01EBBA319003C0859 /* DirectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionButton.swift; sourceTree = "<group>"; };
+		385837B61EBBEA5C003C0859 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
+		385E4F5A1E8DAF58004F5EEF /* TopDownRacingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopDownRacingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		385E4F5D1E8DAF58004F5EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		385E4F611E8DAF58004F5EEF /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		385E4F651E8DAF58004F5EEF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		385E4F681E8DAF59004F5EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		385E4F6A1E8DAF59004F5EEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		385E4F6D1E8DAF59004F5EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		385E4F6F1E8DAF59004F5EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		385E4F751E8DBBE4004F5EEF /* Tire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tire.swift; sourceTree = "<group>"; };
+		38CFB4881EBF725C00C44606 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		385E4F571E8DAF58004F5EEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38537F3A1EB14F7300483E1A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				38537F3B1EB14F9200483E1A /* CustomCGVector.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		385E4F511E8DAF58004F5EEF = {
+			isa = PBXGroup;
+			children = (
+				385E4F5C1E8DAF58004F5EEF /* TopDownRacer */,
+				385E4F5B1E8DAF58004F5EEF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		385E4F5B1E8DAF58004F5EEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				385E4F5A1E8DAF58004F5EEF /* TopDownRacingGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		385E4F5C1E8DAF58004F5EEF /* TopDownRacer */ = {
+			isa = PBXGroup;
+			children = (
+				385E4F5D1E8DAF58004F5EEF /* AppDelegate.swift */,
+				385E4F611E8DAF58004F5EEF /* Actions.sks */,
+				385837B61EBBEA5C003C0859 /* MyScene.sks */,
+				38CFB4881EBF725C00C44606 /* GameScene.swift */,
+				385E4F651E8DAF58004F5EEF /* GameViewController.swift */,
+				38537F3A1EB14F7300483E1A /* Utils */,
+				385E4F671E8DAF59004F5EEF /* Main.storyboard */,
+				385E4F6A1E8DAF59004F5EEF /* Assets.xcassets */,
+				385E4F6C1E8DAF59004F5EEF /* LaunchScreen.storyboard */,
+				385E4F6F1E8DAF59004F5EEF /* Info.plist */,
+				385E4F751E8DBBE4004F5EEF /* Tire.swift */,
+				385837B01EBBA319003C0859 /* DirectionButton.swift */,
+			);
+			path = TopDownRacer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		385E4F591E8DAF58004F5EEF /* TopDownRacingGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385E4F721E8DAF59004F5EEF /* Build configuration list for PBXNativeTarget "TopDownRacingGame" */;
+			buildPhases = (
+				385E4F561E8DAF58004F5EEF /* Sources */,
+				385E4F571E8DAF58004F5EEF /* Frameworks */,
+				385E4F581E8DAF58004F5EEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TopDownRacingGame;
+			productName = TopDownRacer;
+			productReference = 385E4F5A1E8DAF58004F5EEF /* TopDownRacingGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		385E4F521E8DAF58004F5EEF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "María Victoria Cavo";
+				TargetAttributes = {
+					385E4F591E8DAF58004F5EEF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = R5E6KYEN87;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 385E4F551E8DAF58004F5EEF /* Build configuration list for PBXProject "TopDownRacingGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 385E4F511E8DAF58004F5EEF;
+			productRefGroup = 385E4F5B1E8DAF58004F5EEF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				385E4F591E8DAF58004F5EEF /* TopDownRacingGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		385E4F581E8DAF58004F5EEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385E4F691E8DAF59004F5EEF /* Main.storyboard in Resources */,
+				385E4F6B1E8DAF59004F5EEF /* Assets.xcassets in Resources */,
+				385837B71EBBEA5C003C0859 /* MyScene.sks in Resources */,
+				385E4F6E1E8DAF59004F5EEF /* LaunchScreen.storyboard in Resources */,
+				385E4F621E8DAF58004F5EEF /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		385E4F561E8DAF58004F5EEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385E4F761E8DBBE4004F5EEF /* Tire.swift in Sources */,
+				385E4F661E8DAF58004F5EEF /* GameViewController.swift in Sources */,
+				38CFB4891EBF725C00C44606 /* GameScene.swift in Sources */,
+				38537F3C1EB14F9200483E1A /* CustomCGVector.swift in Sources */,
+				385837B11EBBA319003C0859 /* DirectionButton.swift in Sources */,
+				385E4F5E1E8DAF58004F5EEF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		385E4F671E8DAF59004F5EEF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				385E4F681E8DAF59004F5EEF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		385E4F6C1E8DAF59004F5EEF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				385E4F6D1E8DAF59004F5EEF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		385E4F701E8DAF59004F5EEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		385E4F711E8DAF59004F5EEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		385E4F731E8DAF59004F5EEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R5E6KYEN87;
+				INFOPLIST_FILE = TopDownRacer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.itba.vjios.TopDownRacer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		385E4F741E8DAF59004F5EEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R5E6KYEN87;
+				INFOPLIST_FILE = TopDownRacer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.itba.vjios.TopDownRacer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		385E4F551E8DAF58004F5EEF /* Build configuration list for PBXProject "TopDownRacingGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385E4F701E8DAF59004F5EEF /* Debug */,
+				385E4F711E8DAF59004F5EEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		385E4F721E8DAF59004F5EEF /* Build configuration list for PBXNativeTarget "TopDownRacingGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385E4F731E8DAF59004F5EEF /* Debug */,
+				385E4F741E8DAF59004F5EEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 385E4F521E8DAF58004F5EEF /* Project object */;
+}
