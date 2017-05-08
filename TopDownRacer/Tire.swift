@@ -21,6 +21,8 @@ class Tire : SKSpriteNode {
     private var fowardDirection : CGVector = CGVector(dx: 0, dy: 1)
     private var lateralDirection : CGVector = CGVector(dx: 1, dy: 0)
     
+    public var traction : CGFloat = 1
+    
     var maxForwardSpeed : CGFloat = 100  // 100;
     var maxBackwardSpeed : CGFloat = -20 // -20;
     var maxDriveForce : CGFloat = 150    // 150;
@@ -69,7 +71,7 @@ class Tire : SKSpriteNode {
         self.physicsBody?.applyAngularImpulse(-0.1 * (self.physicsBody?.angularDamping)! * (self.physicsBody?.angularVelocity)!)
         let currentForwardNormal : CGVector = getForwardVelocity()
         let currentForwardSpeed : CGFloat = getLateralDirection().length()
-        let dragForceMagnitude : CGFloat = -2 * currentForwardSpeed
+        let dragForceMagnitude : CGFloat = -2 * currentForwardSpeed * traction
         self.physicsBody!.applyForce(CGVector(dx: currentForwardNormal.dx * dragForceMagnitude, dy: currentForwardNormal.dy * dragForceMagnitude), at: self.position)
         
     }
@@ -94,9 +96,9 @@ class Tire : SKSpriteNode {
         var force : CGFloat = 0
         
         if (desiredSpeed > currentSpeed) {
-            force = maxDriveForce
+            force = maxDriveForce * traction
         } else if (desiredSpeed < currentSpeed) {
-            force = -maxDriveForce
+            force = -maxDriveForce * traction
         } else {
             return
         }
@@ -107,9 +109,9 @@ class Tire : SKSpriteNode {
         var desiredTorque : CGFloat = 0
         switch (controlState & (TireDirections.Left|TireDirections.Right)) {
             case TireDirections.Left:
-                desiredTorque = 1
+                desiredTorque = 1 * traction
             case TireDirections.Right:
-                desiredTorque = -1
+                desiredTorque = -1 * traction
             default:
                 return
         }

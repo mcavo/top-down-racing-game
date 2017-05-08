@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		38537F3C1EB14F9200483E1A /* CustomCGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38537F3B1EB14F9200483E1A /* CustomCGVector.swift */; };
 		385837B11EBBA319003C0859 /* DirectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385837B01EBBA319003C0859 /* DirectionButton.swift */; };
-		385837B71EBBEA5C003C0859 /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 385837B61EBBEA5C003C0859 /* MyScene.sks */; };
+		385837B71EBBEA5C003C0859 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 385837B61EBBEA5C003C0859 /* GameScene.sks */; };
 		385E4F5E1E8DAF58004F5EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E4F5D1E8DAF58004F5EEF /* AppDelegate.swift */; };
 		385E4F621E8DAF58004F5EEF /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 385E4F611E8DAF58004F5EEF /* Actions.sks */; };
 		385E4F661E8DAF58004F5EEF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E4F651E8DAF58004F5EEF /* GameViewController.swift */; };
@@ -17,13 +17,14 @@
 		385E4F6B1E8DAF59004F5EEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385E4F6A1E8DAF59004F5EEF /* Assets.xcassets */; };
 		385E4F6E1E8DAF59004F5EEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385E4F6C1E8DAF59004F5EEF /* LaunchScreen.storyboard */; };
 		385E4F761E8DBBE4004F5EEF /* Tire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E4F751E8DBBE4004F5EEF /* Tire.swift */; };
+		388265911EBFCFB70065B487 /* Grass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388265901EBFCFB70065B487 /* Grass.swift */; };
 		38CFB4891EBF725C00C44606 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CFB4881EBF725C00C44606 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		38537F3B1EB14F9200483E1A /* CustomCGVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCGVector.swift; sourceTree = "<group>"; };
 		385837B01EBBA319003C0859 /* DirectionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionButton.swift; sourceTree = "<group>"; };
-		385837B61EBBEA5C003C0859 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
+		385837B61EBBEA5C003C0859 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		385E4F5A1E8DAF58004F5EEF /* TopDownRacingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopDownRacingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385E4F5D1E8DAF58004F5EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		385E4F611E8DAF58004F5EEF /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -33,6 +34,7 @@
 		385E4F6D1E8DAF59004F5EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		385E4F6F1E8DAF59004F5EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385E4F751E8DBBE4004F5EEF /* Tire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tire.swift; sourceTree = "<group>"; };
+		388265901EBFCFB70065B487 /* Grass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grass.swift; sourceTree = "<group>"; };
 		38CFB4881EBF725C00C44606 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +78,7 @@
 			children = (
 				385E4F5D1E8DAF58004F5EEF /* AppDelegate.swift */,
 				385E4F611E8DAF58004F5EEF /* Actions.sks */,
-				385837B61EBBEA5C003C0859 /* MyScene.sks */,
+				385837B61EBBEA5C003C0859 /* GameScene.sks */,
 				38CFB4881EBF725C00C44606 /* GameScene.swift */,
 				385E4F651E8DAF58004F5EEF /* GameViewController.swift */,
 				38537F3A1EB14F7300483E1A /* Utils */,
@@ -86,6 +88,7 @@
 				385E4F6F1E8DAF59004F5EEF /* Info.plist */,
 				385E4F751E8DBBE4004F5EEF /* Tire.swift */,
 				385837B01EBBA319003C0859 /* DirectionButton.swift */,
+				388265901EBFCFB70065B487 /* Grass.swift */,
 			);
 			path = TopDownRacer;
 			sourceTree = "<group>";
@@ -152,7 +155,7 @@
 			files = (
 				385E4F691E8DAF59004F5EEF /* Main.storyboard in Resources */,
 				385E4F6B1E8DAF59004F5EEF /* Assets.xcassets in Resources */,
-				385837B71EBBEA5C003C0859 /* MyScene.sks in Resources */,
+				385837B71EBBEA5C003C0859 /* GameScene.sks in Resources */,
 				385E4F6E1E8DAF59004F5EEF /* LaunchScreen.storyboard in Resources */,
 				385E4F621E8DAF58004F5EEF /* Actions.sks in Resources */,
 			);
@@ -167,6 +170,7 @@
 			files = (
 				385E4F761E8DBBE4004F5EEF /* Tire.swift in Sources */,
 				385E4F661E8DAF58004F5EEF /* GameViewController.swift in Sources */,
+				388265911EBFCFB70065B487 /* Grass.swift in Sources */,
 				38CFB4891EBF725C00C44606 /* GameScene.swift in Sources */,
 				38537F3C1EB14F9200483E1A /* CustomCGVector.swift in Sources */,
 				385837B11EBBA319003C0859 /* DirectionButton.swift in Sources */,

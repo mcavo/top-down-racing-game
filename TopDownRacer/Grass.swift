@@ -1,18 +1,18 @@
 //
-//  DirectionButton.swift
-//  TopDownRacer
+//  SpecialGround.swift
+//  TopDownRacingGame
 //
-//  Created by María Victoria Cavo on 4/5/17.
+//  Created by María Victoria Cavo on 7/5/17.
 //  Copyright © 2017 María Victoria Cavo. All rights reserved.
 //
 
 import Foundation
 import SpriteKit
 
-class DirectionButton : SKSpriteNode {
+class Grass : SKSpriteNode {
     
-    public var pressed : Bool = false
-
+    let traction : CGFloat = 0.5
+    
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
     }
@@ -20,6 +20,4 @@ class DirectionButton : SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
 }

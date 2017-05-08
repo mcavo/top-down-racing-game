@@ -21,12 +21,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         static let Down     : UInt32 = 0x8
     }
     
+    public struct PhysicsCategory {
+        static let Tire     : UInt32 = 0x1
+        static let Grass    : UInt32 = 0x2
+        static let Borders  : UInt32 = 0x4
+    }
+    
     private var directionButtonR : DirectionButton? = nil
     private var directionButtonL : DirectionButton? = nil
     private var directionButtonU : DirectionButton? = nil
     private var directionButtonD : DirectionButton? = nil
     
     let rotationAngle = M_PI / 90.0
+    
+    let normalTraction : CGFloat = 1
     
     private var player : Tire? = nil
 
@@ -42,6 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         addTire()
         addUI()
+        addRaceTrack()
         
     }
     
@@ -94,6 +103,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        if ((firstBody.categoryBitMask & PhysicsCategory.Tire != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Grass != 0)) {
+            if let tire = firstBody.node as? Tire, let
+                grass = secondBody.node as? Grass {
+                tire.traction = grass.traction
+            }
+        }
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        if ((firstBody.categoryBitMask & PhysicsCategory.Tire != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Grass != 0)) {
+            if let tire = firstBody.node as? Tire {
+                tire.traction = normalTraction
+            }
+        }
+    }
+    
     func addUI() {
         
         let camera = SKCameraNode()
@@ -103,24 +149,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let constraint = SKConstraint.distance(SKRange(constantValue: 0), to: player!)
         camera.constraints = [ constraint ]
         
-        directionButtonU = DirectionButton(texture: SKTexture(imageNamed: "right-circle-pink"), color: SKColor.clear, size: CGSize(width: 40, height: 40))
+        directionButtonU = DirectionButton(texture: SKTexture(imageNamed: "right-circle-black"), color: SKColor.clear, size: CGSize(width: 40, height: 40))
         directionButtonU!.zRotation = zRotation + CGFloat(M_PI / 2)
         directionButtonU!.position = convert(CGPoint(x: 0, y: -size.height/2 + directionButtonU!.size.height * 3), to: camera)
-        
         camera.addChild(directionButtonU!)
         
-        directionButtonD = DirectionButton(texture: SKTexture(imageNamed: "right-circle-pink"), color: SKColor.clear, size: CGSize(width: 40, height: 40))
+        directionButtonD = DirectionButton(texture: SKTexture(imageNamed: "right-circle-black"), color: SKColor.clear, size: CGSize(width: 40, height: 40))
         directionButtonD!.zRotation = zRotation + CGFloat(M_PI * 3 / 2)
         directionButtonD!.position = convert(CGPoint(x: 0, y: -size.height/2 + directionButtonD!.size.height), to: camera)
         
         camera.addChild(directionButtonD!)
         
-        directionButtonR = DirectionButton(texture: SKTexture(imageNamed: "right-circle-pink"), color: SKColor.clear, size: CGSize(width: 40, height: 40))
+        directionButtonR = DirectionButton(texture: SKTexture(imageNamed: "right-circle-black"), color: SKColor.clear, size: CGSize(width: 40, height: 40))
         directionButtonR!.position = convert(CGPoint(x: size.width/2 - directionButtonR!.size.width , y: -size.height/2 + directionButtonD!.size.height * 2), to: camera)
         
         camera.addChild(directionButtonR!)
         
-        directionButtonL = DirectionButton(texture: SKTexture(imageNamed: "right-circle-pink"), color: SKColor.clear, size: CGSize(width: 40, height: 40))
+        directionButtonL = DirectionButton(texture: SKTexture(imageNamed: "right-circle-black"), color: SKColor.clear, size: CGSize(width: 40, height: 40))
         directionButtonL!.zRotation = zRotation + CGFloat(M_PI)
         directionButtonL!.position.x = directionButtonL!.size.width
         directionButtonL!.position.y = directionButtonL!.size.height
@@ -137,8 +182,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tire!.position.y = size.height / 2
         tire!.initDirections(lateralDirection: CGVector(dx:1,dy:0), fowardDirection: CGVector(dx:0, dy:1))
         tire!.name = "tire"
+        tire!.traction = normalTraction
+        tire!.physicsBody?.categoryBitMask = PhysicsCategory.Tire
+        tire!.physicsBody?.contactTestBitMask = PhysicsCategory.Grass
+        tire!.physicsBody?.collisionBitMask = 0
         player = tire
         addChild(tire!)
+    }
+    
+    func addRaceTrack() {
+        let grass = SKSpriteNode(imageNamed: "grass_tile")
+        grass.zPosition = -1
+        addChild(grass)
+        let grassObj = Grass(texture: nil, color: UIColor.clear, size: grass.size)
+        grassObj.position = grass.position
+        grassObj.physicsBody = SKPhysicsBody(rectangleOf: grass.size)
+        grassObj.physicsBody?.categoryBitMask = PhysicsCategory.Grass
+        grassObj.physicsBody?.collisionBitMask = 0
+        addChild(grassObj)
     }
 
 }
