@@ -18,6 +18,7 @@
 		385E4F6E1E8DAF59004F5EEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385E4F6C1E8DAF59004F5EEF /* LaunchScreen.storyboard */; };
 		385E4F761E8DBBE4004F5EEF /* Tire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E4F751E8DBBE4004F5EEF /* Tire.swift */; };
 		388265911EBFCFB70065B487 /* Grass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388265901EBFCFB70065B487 /* Grass.swift */; };
+		388E6C271EC03E700033C6EE /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E6C261EC03E700033C6EE /* Car.swift */; };
 		38CFB4891EBF725C00C44606 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CFB4881EBF725C00C44606 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		385E4F6F1E8DAF59004F5EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385E4F751E8DBBE4004F5EEF /* Tire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tire.swift; sourceTree = "<group>"; };
 		388265901EBFCFB70065B487 /* Grass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grass.swift; sourceTree = "<group>"; };
+		388E6C261EC03E700033C6EE /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		38CFB4881EBF725C00C44606 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				385E4F751E8DBBE4004F5EEF /* Tire.swift */,
 				385837B01EBBA319003C0859 /* DirectionButton.swift */,
 				388265901EBFCFB70065B487 /* Grass.swift */,
+				388E6C261EC03E700033C6EE /* Car.swift */,
 			);
 			path = TopDownRacer;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				385E4F761E8DBBE4004F5EEF /* Tire.swift in Sources */,
 				385E4F661E8DAF58004F5EEF /* GameViewController.swift in Sources */,
+				388E6C271EC03E700033C6EE /* Car.swift in Sources */,
 				388265911EBFCFB70065B487 /* Grass.swift in Sources */,
 				38CFB4891EBF725C00C44606 /* GameScene.swift in Sources */,
 				38537F3C1EB14F9200483E1A /* CustomCGVector.swift in Sources */,

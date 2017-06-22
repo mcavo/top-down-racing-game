@@ -11,13 +11,6 @@ import SpriteKit
 
 class Tire : SKSpriteNode {
     
-    public struct TireDirections {
-        static let Left     : UInt32 = 0x1
-        static let Right    : UInt32 = 0x2
-        static let Up       : UInt32 = 0x4
-        static let Down     : UInt32 = 0x8
-    }
-    
     private var fowardDirection : CGVector = CGVector(dx: 0, dy: 1)
     private var lateralDirection : CGVector = CGVector(dx: 1, dy: 0)
     
@@ -33,6 +26,9 @@ class Tire : SKSpriteNode {
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 10, height: 20))
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Tire
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Grass
+        self.physicsBody?.collisionBitMask = PhysicsCategory.Border | PhysicsCategory.Water
         self.physicsBody?.mass = 20
         self.physicsBody?.isDynamic = true
         self.physicsBody?.affectedByGravity = false
@@ -41,7 +37,7 @@ class Tire : SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     
     public func getLateralVelocity() -> CGVector {
         let velocity : CGVector = self.physicsBody!.velocity
@@ -64,7 +60,7 @@ class Tire : SKSpriteNode {
     }
     
     public func updateFriction() {
-        let const : CGFloat = self.physicsBody!.mass * (-1)
+        let const : CGFloat = self.physicsBody!.mass * (-1) * traction
         let lateralVelocity : CGVector = getLateralVelocity()
         let impulse : CGVector =  CGVector(dx: lateralVelocity.dx * const, dy: lateralVelocity.dy * const)
         self.physicsBody!.applyImpulse(impulse, at: self.position)
@@ -81,41 +77,58 @@ class Tire : SKSpriteNode {
         self.lateralDirection = lateralDirection
     }
     
-    public func updateDrive(controlState : UInt32) {
+    public func updateDrive(_ controlState : UInt32) {
         var desiredSpeed : CGFloat = 0
         switch (controlState & (TireDirections.Up|TireDirections.Down)) {
-            case TireDirections.Up:
-                desiredSpeed = maxForwardSpeed
-            case TireDirections.Down:
-                desiredSpeed = maxBackwardSpeed
-            default:
-                return
+        case TireDirections.Up:
+            desiredSpeed = maxForwardSpeed
+        case TireDirections.Down:
+            desiredSpeed = maxBackwardSpeed
+        default:
+            return
         }
         let currentForwardNormal : CGVector = getFowardDirection()
         let currentSpeed : CGFloat = pointProduct(vectorA: getForwardVelocity(), vectorB: currentForwardNormal)
         var force : CGFloat = 0
         
         if (desiredSpeed > currentSpeed) {
-            force = maxDriveForce * traction
+            force = maxDriveForce * 10
         } else if (desiredSpeed < currentSpeed) {
-            force = -maxDriveForce * traction
+            force = -maxDriveForce * 10
         } else {
             return
         }
         self.physicsBody!.applyForce(CGVector( dx: currentForwardNormal.dx * force, dy: currentForwardNormal.dy * force), at: self.position)
     }
     
-    public func updateTurn(controlState : UInt32) {
-        var desiredTorque : CGFloat = 0
+    public func updateTurn(_ controlState : UInt32, dt : CGFloat) {
+        
+        /*
+         var desiredTorque : CGFloat = 0
         switch (controlState & (TireDirections.Left|TireDirections.Right)) {
-            case TireDirections.Left:
-                desiredTorque = 1 * traction
-            case TireDirections.Right:
-                desiredTorque = -1 * traction
-            default:
-                return
+        case TireDirections.Left:
+            desiredTorque = 1 * traction
+        case TireDirections.Right:
+            desiredTorque = -1 * traction
+        default:
+            return
+        }*/
+        switch (controlState & (TireDirections.Left|TireDirections.Right)) {
+        case TireDirections.Left:
+            let rotation : CGFloat = self.zRotation + 20 * dt * CGFloat.pi / 180.0
+            if ( rotation < CGFloat.pi / 4.0 ) {
+                self.zRotation = rotation
+            }
+        case TireDirections.Right:
+            let rotation : CGFloat = self.zRotation - 20 * dt * CGFloat.pi / 180.0
+            if ( rotation > -CGFloat.pi / 4.0 ) {
+                self.zRotation = rotation
+            }
+        default:
+            return
         }
-        self.physicsBody!.applyTorque(desiredTorque)
+        
+//        self.physicsBody!.applyTorque(desiredTorque)
     }
     
     

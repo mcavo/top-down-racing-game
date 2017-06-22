@@ -11,7 +11,7 @@ import SpriteKit
 
 class Grass : SKSpriteNode {
     
-    let traction : CGFloat = 0.5
+    let traction : CGFloat = 1.5
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
